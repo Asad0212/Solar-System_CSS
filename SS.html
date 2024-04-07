@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+body {
+    margin: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    background-color: black;
+    overflow: hidden;
+}
+    .container {
+    font-size: 10px;
+    width: 1280px;
+    height: 580px;
+    position: relative;
+}
+.sun {
+    position: absolute;
+    top: 280px;
+    left: 630px;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+}
+.earth,.moon,.mercury,.venus,.mars,.jupiter,.saturn,.moon1,.moon2,.moon3,.uranus,.neptune,.pluto {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1px 0.1px 0 0;
+    border-radius: 50%;
+}
+.asteroidbelt1,.asteroidbelt2{
+    position: absolute;
+    border-style: dotted;
+    border-color:  gray;
+    border-width: 2px 2px 3px 4px;
+    border-radius: 50%;
+}
+.asteroidbelt3,.asteroidbelt4{
+    position: absolute;
+    border-style: dotted;
+    border-color: grey;
+    border-width: 4px 3px 2px 4 px;
+    border-radius: 50%;
+}
+.mercury {
+    top: 269px;
+    left: 619px;
+    width: 42px;
+    height: 42px;
+    animation: orbit 11.8s linear infinite;
+}
+.venus {
+    top: 260px;
+    left: 610px;
+    width: 60px;
+    height: 60px;
+    animation: orbit 48.6s linear infinite;
+}
+.earth {
+    top: 240px;
+    left: 590px;
+    width: 100px;
+    height: 100px; 
+    animation: orbit 73s linear infinite;   
+}
+.moon {
+    top: 5px;
+    left: 77px;
+    width: 16px;
+    height:16px; 
+    animation: orbit 7s linear infinite;
+}
+.mars {
+    top: 225px;
+    left: 575px;
+    width: 130px;
+    height: 130px;
+    animation: orbit 137.4s linear infinite;
+}
+.asteroidbelt1 {
+    top: 202.5px;
+    left: 555px;
+    width: 175px;
+    height: 175px;
+    animation: orbit 537.4s linear infinite;
+}
+.asteroidbelt2 {
+    top: 205px;
+    left: 557px;
+    width: 168px;
+    height: 168px;
+    animation: orbit 1374s linear infinite;
+}
+.asteroidbelt3 {
+    top: 204px;
+    left: 555px;
+    width: 174px;
+    height: 174px;
+    animation: orbit 470.4s linear infinite;
+}
+.asteroidbelt4 {
+    top: 199px;
+    left: 551px;
+    width: 184px;
+    height: 184px;
+    animation: orbit 457.4s linear infinite;
+}
+.jupiter {
+    top: 185px;
+    left: 535px;
+    width: 220px;
+    height: 220px;
+    animation: orbit 216.65s linear infinite;
+}
+.saturn {
+    top: 160px;
+    left: 510px;
+    width: 270px;
+    height: 270px;
+    animation: orbit 537.8s linear infinite;
+}
+.moon1 {
+    top: 31px;
+    right: 30px;
+    width: 16px;
+    height:16px; 
+    animation: orbit 20s linear infinite;
+}
+.moon2 {
+    top: 31px;
+    right: 30px;
+    width: 19px;
+    height:16px; 
+    animation: orbit 12s linear infinite;
+}
+.moon3 {
+    top: 31px;
+    right: 30px;
+    width: 18px;
+    height:19px; 
+    animation: orbit 15s linear infinite;
+}
+.uranus {
+    top: 120px;
+    left: 470px;
+    width: 350px;
+    height: 350px;
+    animation: orbit 767.175s linear infinite;
+}
+.neptune {
+    top: 95px;
+    left: 445px;
+    width: 400px;
+    height: 400px;
+    animation: orbit 1003.17s linear infinite;
+}
+.pluto {
+    top: 70px;
+    left: 295px;
+    width: 700px;
+    height: 450px;
+    animation: orbit 1508.67s linear infinite;
+}
+
+
+.earth::before,
+.moon::before,
+.mercury::before,
+.venus::before,
+.mars::before,
+.jupiter::before,
+.saturn::before,
+.moon1::before,
+.moon2::before,
+.moon3::before,
+.uranus::before,
+.neptune::before,
+.pluto::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.mercury::before {
+    top: 4px;
+    right: 3.7px;
+    width: 4px;
+    height: 4px;
+    background-color: darkgrey;
+}
+.venus::before {
+    top: 5.1px;
+    right: 5.2px;
+    width: 6px;
+    height: 6px;
+    background-color: chocolate;
+}
+.earth::before {
+    top: 9px;
+    right: 10.3px;
+    width: 8px;
+    height: 8px;
+    background-color: deepskyblue;    
+}
+.moon::before {
+    top: 1.2px;
+    right: 1.3px;
+    width: 1.9px;
+    height: 1.9px;
+    background-color: silver;
+}
+.mars::before {
+    top: 16px;	
+    right: 15px;
+    width: 7px;
+    height: 7px;
+    background-color: firebrick;
+}
+.jupiter::before {
+    top: 25px;
+    right: 25px;
+    width: 14px;
+    height: 14px;
+    background-color: beige;
+}
+.saturn::before {
+    top: 34px;
+    right: 33px;
+    width: 11px;
+    height:11px;
+    background-color: bisque;
+}
+.moon1::before {
+    top: 0.9px;
+    right: 0.9px;
+    width: 2.6px;
+    height: 2.6px;
+    background-color: orange;
+}
+.moon2::before {
+    top: 1.4px;
+    right: 1.3px;
+    width: 2.2px;
+    height: 2.2px;
+    background-color: darkred;
+}
+.moon3::before {
+    top: 1.4px;
+    right: 1.4px;
+    width: 2px;
+    height: 2px;
+    background-color: darkslategrey;
+}
+.uranus::before {
+    top: 46px;
+    right: 46px;
+    width: 10px;
+    height:10px;
+    background-color: powderblue;
+}
+.neptune::before {
+    top:54px;
+    right: 54px;
+    width: 10px;
+    height: 10px;
+    background-color:royalblue;
+}
+.pluto::before {
+    top:78px;
+    right: 76px;
+    width: 7px;
+    height: 7px;
+    background-color: brown;
+}
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+}
+.planet-name {
+    display: none;
+    position: absolute;
+    color: white;
+    font-size: 1.2px;
+}
+.sun:hover::after,
+.earth:hover::after,
+.moon:hover::after,
+.mercury:hover::after,
+.venus:hover::after,
+.mars:hover::after,
+.jupiter:hover::after,
+.saturn:hover::after,
+.uranus:hover::after,
+.neptune:hover::after,
+.pluto:hover::after {
+    content: attr(data-name);
+    position: absolute;
+    color: white;
+    font-size: 1.2px;
+    top: -1.5px; /* change bottom to top and adjust the value */
+    left: 50%;
+    transform: translateX(-50%);
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sun">
+      <div class="planet-name" data-name="Sun">Sun</div>
+    </div>
+    <div class="earth">
+      <div class="planet-name" data-name="Earth">Earth</div>
+      <div class="moon">
+        <div class="planet-name" data-name="Moon">Moon</div>
+      </div>
+    </div>
+    <div class="mercury">
+      <div class="planet-name" data-name="Mercury">Mercury</div>
+    </div>
+    <div class="venus">
+      <div class="planet-name" data-name="Venus">Venus</div>
+    </div>
+    <div class="mars">
+      <div class="planet-name" data-name="Mars">Mars</div>
+    </div>
+    <div class="asteroidbelt1">
+      <div data-name="Asteroidbelt1">Asteroidbelt1</div>
+    </div>
+    <div class="asteroidbelt2">
+      <div class="planet-name" data-name="Asteroidbelt2">Asteroidbelt2</div>
+    </div>
+    <div class="asteroidbelt3">
+      <div class="planet-name" data-name="Asteroidbelt3">Asteroidbelt3</div>
+    </div>
+    <div class="asteroidbelt4">
+      <div class="planet-name" data-name="Asteroidbelt4">Asteroidbelt4</div>
+    </div>
+    <div class="jupiter">
+      <div class="planet-name" data-name="Jupiter">Jupiter</div>
+    </div>
+    <div class="saturn">
+      <div class="planet-name" data-name="Saturn">Saturn</div>
+      <div class="moon1">
+        <div class="planet-name" data-name="Moon1">Moon1</div>
+      </div>
+      <div class="moon2">
+        <div class="planet-name" data-name="Moon2">Moon2</div>
+      </div>
+      <div class="moon3">
+        <div class="planet-name" data-name="Moon3">Moon3</div>
+      </div>
+    </div>
+    <div class="uranus">
+      <div class="planet-name" data-name="Uranus">Uranus</div>
+    </div>
+    <div class="neptune">
+      <div class="planet-name" data-name="Neptune">Neptune</div>
+    </div>
+    <div class="pluto">
+      <div class="planet-name" data-name="Pluto">Pluto</div>
+    </div>
+  </div>
+  <script>
+    function createStars() {
+      const container = document.querySelector('.container');
+      for (let i = 0; i <6000 ; i++) { // Increase the number of stars to 1000
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.width = '0.7px';
+        star.style.height = '0.7px';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.left = Math.random() * 100 + '%';
+        container.appendChild(star);
+      }
+    }
+    createStars();
+  </script>
+</body>
+
+</html>
